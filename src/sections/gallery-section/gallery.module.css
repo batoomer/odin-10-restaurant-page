@@ -1,0 +1,172 @@
+.gallerySection{
+    background-color: var(--hero-bg);
+    color: var(--hero-color);
+    gap: 3rem;
+}
+
+.gallerySection > h2 {
+    text-shadow: 0 0 1rem var(--primary-bg);
+}
+
+
+.gallerySection > ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+} 
+
+.gallerySection > ul > li {
+    height: clamp(10vh, calc(10vh + 10vw) , 35vh);
+    flex: 1 1 auto;
+    box-shadow: 0 0 0.5rem 0.15rem var(--primary-bg);
+    cursor: pointer;
+}
+
+.gallerySection > ul > li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+
+
+.gallerySection > ul > li:hover{
+    filter: grayscale(1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .8s ease-in-out;
+
+}
+
+.gallerySection > ul > li::after{
+    content: "\1F50E";
+    font-size: 2rem;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.gallerySection > ul > li:hover::after{ 
+    visibility:visible;
+    opacity: 1;
+    position: absolute;
+    transition: visibility 0s, opacity 0.9s ease-in-out;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.75);
+    z-index: 1;
+    animation: openZoomRotate 0.3s ease-in-out;
+}
+
+
+.modalCloseAnimation{
+    animation: closeZoomRotate 0.3s ease-in-out;
+}
+
+
+.modal > img {
+    display: block;
+    max-width: 75%;
+    max-height: 80vh;
+}
+
+
+
+.modalNavigation {
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--hero-color);
+    border: 0;
+    font-size: clamp(1.25rem, calc(1rem + 2vw), 3.5rem);
+    padding: 0 1rem;
+}
+
+.modalNavigation:hover{
+    transform: scale(0.8);
+    transition: all 0.5s ease-in-out;
+}
+
+.modalClose {
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: transparent;
+    color: var(--hero-color);
+    border: 0;
+    font-size: 2rem;
+}
+
+.modalClose:hover{
+    transform: rotate(180deg) scale(1.2);
+    transition: all 0.5s ease-in-out;
+}
+
+
+.imageSlideInAnimation {
+    animation: slideIn 0.3s ease-in;
+}
+
+
+.imageSlideOutAnimation {
+    animation: slideOut 0.3s ease-in;
+}
+
+@media only screen and (min-width:640px){
+    .modal {
+        gap:2rem;
+    }
+    
+    .modal > img {
+        width: 60%;
+    }
+}
+
+
+
+@keyframes openZoomRotate {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes closeZoomRotate {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}

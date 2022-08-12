@@ -1,0 +1,104 @@
+.testimonialSection{
+    background-color: var(--primary-bg);
+    color: var(--hero-color);
+    text-shadow: 0 0 1rem black;
+    padding: 3rem 0.25rem;
+    gap:5rem;
+}
+
+.testimonialSection > div {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 3rem;
+    grid-template-areas: 
+    "prev item next"
+    "fo fo fo";
+    align-items: center;
+    justify-items: center;
+    font-size: clamp(0.75rem, calc(0.75rem + 1vw), 1.35rem);
+    width: calc(70vw + 15rem);
+    max-width: 100%;
+}
+
+.testimonialSection > div > button {
+    font-size: clamp(0.75rem, calc(1rem + 1vw), 2rem);
+    background-color: transparent;
+    border:0;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--hero-color-sec);
+    text-shadow: 0 0 1rem black;
+}
+
+.prevBtn{
+    grid-area: prev;
+    justify-self: end;
+}
+
+.nextBtn{
+    grid-area:next;
+    justify-self: start;
+}
+
+.testimonialSection > div > button:hover {
+    color: var(--hero-bg);
+    transform: scale(1.25);
+    transition: 0.3s ease-in;
+}
+
+.testimonialItem{
+    grid-area: item;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--hero-color-sec);
+}
+
+.testimonialItem.animate{
+    animation: openZoom 0.5s ease-in-out;
+}
+
+@keyframes openZoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.testimonialItem > q {
+    text-align: center;
+    line-height: 2rem;
+    padding: 1rem 0.25rem 0.5rem 0.25rem;
+    color: var(--hero-color);
+}
+
+.testimonialItem > img {
+    display: block;
+    width: clamp(4rem, calc(4rem + 2vw), 10rem);
+    height: clamp(4rem, calc(4rem + 2vw), 10rem);
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem black;
+}
+
+.testimonialFooter{
+    grid-area: fo;
+    align-self: start;
+    padding: 0.5rem 1rem;
+    display:flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--hero-bg);
+    text-shadow: none;
+}
+
+.testimonialFooter > span.active{
+    color: var(--hero-color-sec);
+    transition: 0.5s linear;
+}

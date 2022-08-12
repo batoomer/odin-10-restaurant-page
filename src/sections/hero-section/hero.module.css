@@ -1,0 +1,75 @@
+.heroSection {
+    height: 100vh;
+    color: var(--hero-color);
+    background-color: var(--hero-bg);
+    background: linear-gradient(#00000080, #00000080, #00000000),
+        url('./hero-background.jpg') no-repeat center / cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-shadow: 0 0rem 0.5rem black;
+    text-align: center;
+}
+
+
+.heroSection > h1 {
+    font-size: clamp(2rem, calc(1rem + 2vw), 5rem);
+    width: 90%;
+}
+
+.heroSection > p {
+    font-size: clamp(1rem, calc(0.5rem + 1vw), 2.5rem);
+    color: var(--hero-color-sec);
+    width: 70%;
+}
+
+.heroSection > div{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1.25rem;
+    margin-top: 1.5rem;
+    max-width: 90%;
+}
+
+.heroSection > div > button{
+    width: clamp(7.5rem, calc(7.5rem + 5vw), 15rem);
+    color: var(--hero-color);
+    background-color: var(--primary-bg);
+    font-size: clamp(1rem, calc(0.5rem + 1vw), 1.25rem);
+    font-weight: 600;
+    text-shadow: 0 0 0.5rem black;
+    border-radius: 0.25rem;
+    border:0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.heroSection > div > button:hover{
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+}
+
+.heroSection > div > :last-child{
+    background-color: transparent;
+    border: 0.25rem solid var(--primary-bg);
+    color: var(--hero-color);
+}
+
+@media only screen and (min-width:640px){
+    .heroSection > h1{
+        width: 60%;
+    }
+
+    .heroSection > p{
+        width: 40%;
+    }
+
+    .heroSection > div{
+       gap: 5vw;
+       margin-top: 2.5rem;
+    }
+}

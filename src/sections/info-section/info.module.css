@@ -1,0 +1,73 @@
+.infoSection {
+    background-color: var(--secondary-bg);
+    color: var(--hero-bg);
+    gap: 5rem;
+}
+
+.infoSection > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.infoSection >  h2 {
+    text-shadow: 0 0 0.25rem var(--hero-color);
+}
+
+
+.infoCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(17.5rem, calc(17.5rem + 5vw), 25rem);
+    background-color: var(--primary-bg);
+    color: var(--hero-color);
+    border-radius: 5rem;
+    box-shadow: 0 0 0.5rem black;
+    cursor: pointer;
+}
+
+.infoCard:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    from{
+        transform: translateY(0.25rem);
+    }
+    to{
+        transform: translateY(-0.25rem);  
+    }
+}
+
+.infoCard > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5rem 5rem 0 0;
+}
+
+.infoCard > figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    padding: 1rem;
+    text-align: center;
+    color: var(--hero-color-sec);
+    min-height: 12rem;
+}
+
+.infoCard > figcaption > p{
+    max-width: 80%;
+}
+
+.infoCard > figcaption > h3 {
+    color: var(--hero-color);
+    padding: 0.5rem 0;
+    text-shadow: 0 0 0.25rem black;
+    font-size: clamp(1.15rem, calc(1.15rem + 2vw), 1.5rem);
+}

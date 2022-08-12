@@ -1,5 +1,39 @@
-* {
+*,
+*::after,
+*::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+:root{
+    font-family: sans-serif;
+    --hero-bg: #121212;
+    --hero-color: white;
+    --hero-color-sec: rgba(255, 255, 255, 0.70);
+
+    --primary-bg:#d16624;
+    --secondary-bg: #dcdcdc;
+}
+
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+section > h2 {
+    font-size: clamp(1.25rem, calc(1rem + 2vw), 2.5rem);
+    text-align: center;
+    letter-spacing: 0.25rem;
+}
+
+@media only screen and (min-width:640px){
+    section{
+        padding: 3rem 6rem 6rem 6rem;
+    }
 }
