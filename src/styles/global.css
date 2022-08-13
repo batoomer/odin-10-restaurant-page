@@ -14,6 +14,29 @@
 
     --primary-bg:#d16624;
     --secondary-bg: #dcdcdc;
+
+    --footer-bg:#242424;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+main{
+    animation: zoomIn 0.5s ease-in;
+}
+
+@keyframes zoomIn {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
 }
 
 
@@ -36,4 +59,166 @@ section > h2 {
     section{
         padding: 3rem 6rem 6rem 6rem;
     }
+
+    header > :nth-child(2) {
+        display: none;
+    }
+    
+    header > nav {
+        display: block;
+    }
 }
+
+
+/* START HEADER STYLE */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--hero-bg);
+    background-color: transparent;
+    color: var(--hero-color);
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+
+header > .nav-logo {
+    display: block;
+    width: 4rem;
+    height: auto;
+}
+
+header > :nth-child(2) {
+    display: block;
+    width: 2.5rem;
+    height: auto;
+    cursor: pointer;
+}
+
+header > nav {
+    display: none;
+}
+
+header > nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header > nav > ul > li > a {
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: var(--hero-color);
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+header > nav > ul > li > a:hover{
+    color: var(--hero-color-sec);
+    transition: 0.3s ease-in-out;
+}
+
+@media only screen and (min-width:840px){
+    header {
+        padding: 2rem 3rem;
+    }
+
+    header > :nth-child(2) {
+        display: none;
+    }
+    
+    header > nav {
+        display: block;
+    }
+}
+/* END HEADER STYLE */
+
+
+/* START FOOTER STYLE */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--hero-color-sec);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap:3rem;
+    padding: 4rem 2rem 1rem 2rem;
+}
+
+footer svg {
+    display: inline;
+    width: 1.5rem;
+    vertical-align: text-bottom;
+    margin-right: 0.25rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--hero-color-sec);
+    cursor: pointer;
+}
+
+footer a:hover {
+    color: var(--hero-color);
+    transition: 0.3s ease-in-out;
+}
+
+
+footer > ul, 
+footer > form{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+footer > form > div{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer > form > div > input {
+    padding: 0.5rem 1rem;
+    width: 15rem;
+    box-shadow: none;
+}
+
+footer > form > div > button {
+    background-color: var(--primary-bg);
+    color: var(--hero-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1rem;
+}
+
+footer > ul > :first-child,
+footer > form > :first-child{
+    margin-bottom: 1rem;
+    color: var(--hero-color);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+footer > :last-child {
+    flex:100%;
+    padding: 3rem 0.5rem 1rem 0.5rem;
+    text-align: center;
+    color: var(--hero-color);
+}
+
+footer > :last-child img {
+    width: 1.5rem;
+    height: auto;
+    vertical-align: text-bottom;
+    margin-left: 0.5rem;
+}
+
+/* END FOOTER STYLE */

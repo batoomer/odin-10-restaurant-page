@@ -112,6 +112,10 @@ class GallerySection{
     };
 
 
+    destoy(){
+        return undefined;
+    }
+
     create(){
         this.#gallerySection.appendChild(this.#createSectionTitle());
         this.#gallerySection.appendChild(this.#createSectionBody());

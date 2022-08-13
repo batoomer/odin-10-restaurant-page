@@ -25,7 +25,7 @@ const infoContent = [
 
     {
         image: wineImg,
-        title: 'Wine',
+        title: 'Drinks',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dicta mollitia debitis, aliquam odio at repudiandae nihil, voluptatem ab quaerat quibusdam cumque consequatur.'
     },
 

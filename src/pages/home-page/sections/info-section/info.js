@@ -1,8 +1,12 @@
+import { handleNavigation } from '../../../navigation';
 import infoStyle from './info.module.css';
 
 class InfoSection{
     #infoSection;
     #content;
+    #sectionBody;
+
+
     constructor(content){
         this.#content = content;
         this.#infoSection = document.createElement('section');
@@ -18,6 +22,8 @@ class InfoSection{
     #createCard(element){
         const cardContainer = document.createElement('figure');
         cardContainer.classList.add(infoStyle.infoCard);
+        cardContainer.setAttribute('data-nav-type', 'menu');
+        cardContainer.addEventListener('click', handleNavigation);
 
         const cardImage = document.createElement('img');
         cardImage.src = element.image;
@@ -37,14 +43,20 @@ class InfoSection{
     }
 
     #createSectionBody(){
-        const sectionBody = document.createElement('div');
+        this.#sectionBody = document.createElement('div');
         this.#content.forEach(element => {
-            sectionBody.appendChild(this.#createCard(element));
+            this.#sectionBody.appendChild(this.#createCard(element));
         });
-        return sectionBody;
+
+
+        return this.#sectionBody;
     }
 
-
+    destroy(){
+        this.#sectionBody.childNodes.forEach(child=>{
+            child.removeEventListener('click', handleNavigation);
+        });
+    }
 
     create(){
         this.#infoSection.appendChild(this.#createSectionTitle());

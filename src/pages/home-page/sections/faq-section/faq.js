@@ -73,6 +73,10 @@ class FaqSection{
         return faqList;
     }
 
+    destroy(){
+        return undefined;
+    }
+
     create(){
         this.#faqSection.appendChild(this.#createSectionTitle());
         this.#faqSection.appendChild(this.#createSectionBody());

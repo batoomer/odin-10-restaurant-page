@@ -101,6 +101,11 @@ class TestimonialSection{
         this.#startSliderTimer()
     }
 
+
+    destroy(){
+        clearInterval(this.#sliderTimer);
+    }
+
     create(){
         this.#testimonialSection.appendChild(this.#createSectionTitle());
         this.#testimonialSection.appendChild(this.#createSectionBody());

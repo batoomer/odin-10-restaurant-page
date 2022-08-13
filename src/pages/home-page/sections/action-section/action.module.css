@@ -1,0 +1,57 @@
+.actionSection {
+    min-height: 60vh;
+    padding: 3rem 1rem;
+    background-color: var(--hero-bg);
+    color: var(--hero-color);
+    background: linear-gradient(#00000030, #00000030), url('./call-for-action-background.jpg') no-repeat center / cover;
+    justify-content: center;
+}
+
+.actionSection > div {
+    border: 0.25rem solid var(--hero-color);
+    box-shadow: 0 0 0.5rem 0.125rem var(--primary-bg);
+    text-shadow: 0 0 0.25rem var(--primary-bg);
+    border-radius: 0.5rem;
+    padding: 3rem 1rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3rem;
+    font-size: 1rem;
+}
+
+.actionSection > div:hover {
+    border: 0.25rem solid var(--primary-bg);
+    transition: 0.3s ease-out;
+}
+
+.actionSection > div > button {
+    background-color: var(--primary-bg);
+    color: var(--hero-color);
+    width: clamp(7.5rem, calc(7.5rem + 5vw), 15rem);
+    font-size: clamp(1rem, calc(0.5rem + 1vw), 1.25rem);
+    font-weight: 600;
+    text-shadow: 0 0 0.5rem black;
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 0.25rem var(--hero-color);
+    cursor: pointer;
+}
+
+.actionSection > div >button:hover{
+    opacity: 0.9;
+    transform: scale(1.1);
+    transition: 0.3s linear;
+}
+
+@media only screen and (min-width:640px){
+    .actionSection > div{
+        max-width: 50%;
+        font-size: clamp(1rem, calc(1rem + 2vw), 1.5rem);
+        padding: 3rem;
+    }
+}
