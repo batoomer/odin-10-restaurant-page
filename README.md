@@ -22,7 +22,7 @@ This is the 10th project of the odin project curriculum.
 - Responsive Design, Mobile-First
 
 ## The Odin Project: Projects
-- <a href= "https://github.com/batoomer/odin-10-restaurant-page/">Tic Tac Toe</a><br>
+- <a href= "https://github.com/batoomer/odin-10-restaurant-page/">Restaurant Website</a><br>
 - <a href= "https://github.com/batoomer/odin-09-tic-tac-toe/">Tic Tac Toe</a><br>
 - <a href= "https://github.com/batoomer/odin-08-library/">Library</a><br>
 - <a href= "https://github.com/batoomer/odin-07-admin-dashboard/">Admin Dashboard</a><br>
