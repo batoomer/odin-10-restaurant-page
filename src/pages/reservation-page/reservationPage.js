@@ -1,22 +1,23 @@
+import ReservationSection from './sections/reservation-section/reservation';
+
 class ReservationPage {
     #page;
-
-    #heading = document.createElement('h1');
+    #reservationSection = new ReservationSection();
 
     constructor(){
         this.#page = document.createElement('main');
-    }
+    };
 
     destroy(){
-    }
+        this.#reservationSection.destroy();
+    };
     
     create(){
-        this.#heading.textContent = 'ReservationPage';
         this.#page.append(
-            this.#heading
+            this.#reservationSection.create(),
         );
         return this.#page;
-    }
+    };
 } 
 
 

@@ -1,22 +1,26 @@
+import MenuSection from "./sections/menu-section/menu";
+
 class MenuPage {
     #page;
-
-    #heading = document.createElement('h1');
+    #menuSection = new MenuSection();
 
     constructor(){
         this.#page = document.createElement('main');
-    }
+
+    };
 
     destroy(){
-    }
+        this.#menuSection.destroy();
+    };
     
     create(){
-        this.#heading.textContent = 'MenuPage';
+        console.log(this.#menuSection)
         this.#page.append(
-            this.#heading
+            this.#menuSection.create(),
+
         );
         return this.#page;
-    }
+    };
 } 
 
 
