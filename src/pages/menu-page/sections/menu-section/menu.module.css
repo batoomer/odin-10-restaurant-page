@@ -1,3 +1,154 @@
 .menuSection{
+    background-color: var(--secondary-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 91vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) ,
+                url('./menu-bg.jpg') no-repeat center / cover;
+    gap: 3rem;
+}
+
+
+.menuSection > :first-child,
+.menuSection > :nth-child(2),
+.menuSection > :last-child {
+    background-color: var(--hero-color);
+    padding: 1rem 1.5rem;
+    border: 0.125rem solid var(--hero-bg);
+    box-shadow: 0 0 0.25rem var(--hero-bg);
+    margin: 0 1rem;
+}
+
+.menuSection > :first-child{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.menuSection > :nth-child(2) {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    max-width: 90%;
+    overflow-x: auto;
+}
+
+.menuSection > :last-child{
+    font-size: clamp(0.75rem, calc(0.75rem + 2vw), 1rem);
+    flex-grow: 1;
+    margin-bottom: 4rem;
+}
+
+.menuSection > :first-child > h2 {
+    color: var(--primary-bg);
+    font-size: 2rem;
+}
+
+.menuSection > :first-child > p {
+    padding: 1rem 2rem;
+}
+
+
+
+.menuSection > :nth-child(2) button{
     background-color: var(--primary-bg);
+    color: var(--hero-color);
+    font-size: clamp(1rem, calc(0.75rem + 2vw), 1.125rem);
+    padding: 0.5rem 1rem;
+    border: none;
+    opacity: 0.75;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.menuSection > :nth-child(2) button:hover{
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.menuSection > :nth-child(2) button.selected{
+    opacity: 1;
+    margin: 0 0.25rem;
+    transform: scale(1.15);
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+.listContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem 3rem;
+
+}
+
+
+.listContainer > :first-child{
+    grid-column: 1 / span 1;
+    padding-top: 2rem;
+    color: var(--primary-bg);
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.menuItem{
+    flex:50%;
+    display: flex;
+    flex-direction: column;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.menuItem > h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY();
+    }
+}
+
+.menuItem > h3 > span {
+    flex: 50%;
+    border-bottom: 0.125rem dashed var(--hero-bg);
+}
+
+.menuItem > small {
+    font-style: italic;
+    padding: 0.25rem 0;
+}
+
+
+
+
+@media only screen and (min-width:640px){
+    .menuSection > :last-child,
+    .menuSection > :nth-child(2),
+    .menuSection > :first-child{
+        padding: 1.5rem 3rem;
+    }
+
+    .listContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .listContainer > :first-child{
+        grid-column: 1 / span 2;
+    }
 }

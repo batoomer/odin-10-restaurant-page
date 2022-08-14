@@ -2,7 +2,7 @@
     height: 100vh;
     color: var(--hero-color);
     background-color: var(--hero-bg);
-    background: linear-gradient(#00000080, #00000080, #00000000),
+    background: linear-gradient(#00000050, #00000050),
         url('./hero-background.jpg') no-repeat center / cover;
 
     display: flex;

@@ -1,5 +1,5 @@
 .aboutSection {
-    background-color: var(--primary-bg);
+    background-color: var(--hero-bg);
     color: var(--hero-color);
     font-size: clamp(1rem, calc(1rem + 1vw), 1.25rem);
 

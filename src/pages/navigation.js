@@ -5,7 +5,7 @@ import ReservationPage from './reservation-page/reservationPage';
 import ContactPage from './contact-page/contactPage';
 
 
-let activePage = new MenuPage();
+let activePage = new AboutPage();
 
 const navBurger = document.querySelector('header > svg');
 navBurger.addEventListener('click', handleBurgerClick);

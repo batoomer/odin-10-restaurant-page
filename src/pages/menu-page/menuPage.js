@@ -1,8 +1,9 @@
 import MenuSection from "./sections/menu-section/menu";
+import menuItems from "./sections/menu-section/menu.settings";
 
 class MenuPage {
     #page;
-    #menuSection = new MenuSection();
+    #menuSection = new MenuSection(menuItems);
 
     constructor(){
         this.#page = document.createElement('main');
@@ -14,7 +15,6 @@ class MenuPage {
     };
     
     create(){
-        console.log(this.#menuSection)
         this.#page.append(
             this.#menuSection.create(),
 
