@@ -1,20 +1,22 @@
+import ContactSection from "./sections/contact";
+
 class ContactPage {
     #page;
-
-    #heading = document.createElement('h1');
+    #contactSection = new ContactSection();
 
     constructor(){
         this.#page = document.createElement('main');
     }
 
     destroy(){
+        this.#contactSection.destroy();
     }
     
     create(){
-        this.#heading.textContent = 'ContactPage';
         this.#page.append(
-            this.#heading
+            this.#contactSection.create(),
         );
+
         return this.#page;
     }
 } 

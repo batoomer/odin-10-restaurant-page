@@ -47,8 +47,11 @@ class AboutSection{
         this.#aboutButton.removeEventListener('click', handleNavigation);
     }
 
-    create(){
+
+
+    create(disableButton = false){
         this.#aboutSection.appendChild(this.#createSectionBody());
+        if (disableButton) { this.#aboutButton.remove();}
         return this.#aboutSection;
     }
 }
